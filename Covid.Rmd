@@ -21,21 +21,22 @@ library(tidyverse)
 ```
 
 ## Part I. Introduction
-  As a COVID-19 vaccine starts to distribute and hopefully the pandemic comes to an end, many citizens still remain uncertain or misinformed about the measures necessary to keep this public health crisis contained. In order for things to get things back to normal and minimize the risk of a pandemic occurring again, I would like to survey the ontario public's knowledge about COVID-19 and their feelings on the current vaccine. I would like to figure out whether the Ontario population welcomes the vaccine or worries about it. Granted there are a portion of the Ontario population which identify as "anti-vaccine" activist and would like to see this pandemic end naturally.
+	As a COVID-19 vaccine starts to distribute and hopefully the pandemic comes to an end, many citizens still remain uncertain or misinformed about the measures necessary to keep this public health crisis contained. In order for things to get things back to normal and minimize the risk of a pandemic occurring again, I would like to survey the ontario public's knowledge about COVID-19 and their feelings on the current vaccine. I would like to figure out whether the Ontario population welcomes the vaccine or worries about it. Granted there are a portion of the Ontario population which identify as "anti-vaccine" activist and would like to see this pandemic end naturally. 
 
-  To help end this pandemic, we conducted a large-scale phone survey (using simulated data) to poll Ontarians regarding the COVID-19 pandemic. However, since our survey included questions relying on respondents to report their personal habits and knowledge regarding COVID-19, we believe these responses could be embellished to view the respondent in a more favourable light. The survey was designed to extract information regarding the adherence of Ontario residents to current COVID-19 containment policies. We find that non-compliance with public health guidelines remains a significant obstacle to combating the pandemic. Our key findings suggest that misinformation, specifically that relating to social media use, are significant contributing factors towards these less than optimal compliance rates.
-  
-  We find with our simulated data that there still exists a significant degree of non-compliance that is not ideal for containing the pandemic. In particular, we have evidence that media misinformation and social media may be a key factor in these elevated non-compliance rates. In summary, we find that government strategy should be to increase public information and trust by targeting social media with information campaigns. Future studies should use a similar sampling population and study their social media habits.
-  
+	To help end this pandemic, I conducted a large-scale phone survey (using simulated data) to poll Ontarians regarding the COVID-19 pandemic. However, since our survey included questions relying on respondents to report their personal habits and knowledge regarding COVID-19, I believe these responses could be embellished to view the respondent in a more favourable light. The survey was designed to extract information regarding the adherence of Ontario residents to current COVID-19 containment policies. I found that non-compliance with public health guidelines remains a significant obstacle to combating the pandemic. Our key findings suggest that misinformation, specifically that relating to social media use, are significant contributing factors towards these less than optimal compliance rates.
+
+	I found with our simulated data that there still exists a significant degree of non-compliance that is not ideal for containing the pandemic. In particular, I have evidence that media misinformation and social media may be a key factor in these elevated non-compliance rates. In summary, I found that government strategy should be to increase public information and trust by targeting social media with information campaigns. Future studies should use a similar sampling population and study their social media habits.
+
 
 ## Part II. Data
 
 # Survey methodology 
-  The population of interest for this survey are all people in Ontario and the population frame are all residential households within the province of Ontario. Our survey was delivered via telephone. We sampled all publicly available residential phone numbers ending in the digit '3'. This is a form of simple systematic sampling that provides a structured way to gather a large number of samples from the population frame while being representative of the true population.
+	I would like to survey the whole population of Ontario via telephone. This is done by using the area code. The area codes are 365, 548, 705, 226, 289, 613, 807, 437, 249, 343, 416, 519, 647, 905. I sampled all publicly available residential phone numbers starting with those area codes and ending in the digit '3'. This is a form of simple systematic sampling that provides a structured way to gather a large number of samples from the population frame while being representative of the true population.
   
-  A typical issue with simple systematic sampling is the existence of periodic patterns in the sample which may cause our sample to be unrepresentative of the true population. This is resolved through our survey methodology as each residential phone number is assumed to be independent of any others and therefore sampled points should be evenly distributed throughout the population (Changbao and Thomspon, 2020).
+A typical issue with simple systematic sampling is the existence of periodic patterns in the sample which may cause our sample to be unrepresentative of the true population. This is resolved through our survey methodology as each residential phone number is assumed to be independent of any others and therefore sampled points should be evenly distributed throughout the population (Changbao and Thomspon, 2020).
   
-  In the end we received a response from a much smaller subset of the population frame which resulted in 1 769 data points. We expect the survey to cost roughly \$60 000 to provide based on the average of $40 per response for the average phone survey (Mie Yun-Lee, 2002). We required respondents to answer all questions of the survey and any respondents who failed to answer all questions were removed from the sample. Significant non-response biases were also resolved through post-survey methods that reweighted responses from sub-populations with higher non-response rates. To protect the privacy of the respondent, they were simply assigned an ID number and minimal identifying information.
+I required respondents to answer all questions of the survey and any respondents who failed to answer all questions were removed from the sample. Significant non-response biases were also resolved through post-survey methods that reweighted responses from sub-populations with higher non-response rates. To protect the privacy of the respondent, they were simply assigned an ID number and minimal identifying information.
+
 
 ## Part III. Survey
 
@@ -105,58 +106,78 @@ my_data <- tibble(
 ## Part IV. Simulated Survey Results
 For the purposes of this report, our dataset was simulated through some assumptions made about the population frame. For example, age demographics were sourced from Statistics Canada and adjusted for non-response bias to provide an accurate representation of the potential survey respondents.
 
-# IV.a Demographic Data
-```{r age_graph, echo=FALSE}
+# IV.a) Demographic Data
+```{r age, echo=FALSE}
 
 #Graphs
 
 #Distribution of Respondent Age Graph
 my_data %>% 
   ggplot(aes(x = Age)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Ages",
        y = "Frequency",
        title = "Figure 1.1: Distribution of Respondent Age") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 
 ```
 
-```{r vulnerable_graph, echo=FALSE}
+```{r vulnerable, echo=FALSE}
 
 #Distribution of Vulnerable Populations
 my_data %>% 
   ggplot(aes(x = Vulnerable_Population)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 1.2: Responses to 'Are you a member of a COVID-vulnerable group?'") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 
 ```
 
 For the purposes of this question, participants were told that vulnerable groups included (but were not limited to) those over the age of 60, obese individuals, and those with pre-existing health conditions like respiratory infections, any type of cancer, and neurological conditions like dementia (Government of Canada, 2020).
 
-```{r living_graph, echo=FALSE}
+```{r living, echo=FALSE}
 
 #Distribution of Living in COVID Hotspots
 my_data %>% 
   ggplot(aes(x = Living)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 1.3: Responses to 'Do you live in a COVID hotspot?'") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
 
 For the purposes of this question, COVID hotspots included Toronto (excluding the Greater Toronto Area), Ottawa, Windsor-Essex, and Peel region. These regions have been identified as consistently having a higher count of new cases as compared to the rest of Ontario (Mae Jones, 2020).
 
-# IV.b Respondent Information and Trust in COVID-19 Resources
+```{r vaccine_status, echo=FALSE}
+#Distribution of vaccine status
+my_data %>% 
+  ggplot(aes(x = Vaccine_Status)) +
+  geom_bar(colour ="black", fill="seagreen") +
+  labs(x = "Response",
+       y = "Frequency",
+       title = "Figure 1.4: Responses to 'Are you Pro-Vaccine or Anti-Vaccine?'") +
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
+                                size = 0.5, linetype = "solid"))
+```
+
+
+
+
+
+
+
+
+# IV.b) Respondent Information and Trust in COVID-19 Resources
 
 ```{r primary_source, echo=FALSE, fig.height=6}
 # Colour palette
@@ -171,8 +192,8 @@ my_data %>%
        y = "Frequency",
        title = "Figure 2.1 Primary Source for COVID-19 Information") +
   theme(axis.text.x=element_text(angle=90), 
-        panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+        panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 
 ```
@@ -187,8 +208,8 @@ my_data %>%
        y = "Frequency",
        title = "Figure 2.2 Most Trusted Source for COVID-19 Information") +
   theme(axis.text.x=element_text(angle=90), 
-        panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+        panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 
 
@@ -201,12 +222,12 @@ We polled respondents on how they gather information about COVID-19 and their at
 #Distribution of Confidence
 my_data %>% 
   ggplot(aes(x = Knowledgeable)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Confidence",
        y = "Frequency",
        title = "Figure 2.3: Respondent Knowledgeability Levels in COVID-19 Awareness") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
 
@@ -214,7 +235,7 @@ For this question, respondents were asked to self-report their knowledgeability 
 
 
 
-# IV.c. Respondent Habits During COVID-19
+# IV.c) Respondent Habits During COVID-19
 
 ```{r mask, echo=FALSE}
 library(plotrix)
@@ -227,12 +248,12 @@ pie3D(dat, radius = .7, labels=lbls,explode=0.1, main="Figure 3.1: How Often Res
 #Mask adherance rate
 #my_data %>% 
 #  ggplot(aes(x = Mask_Frequency)) +
-#  geom_bar(colour ="black", fill="steelblue") +
+#  geom_bar(colour ="black", fill="seagreen") +
  # labs(x = "Response",
  #      y = "Frequency",
  #      title = "Figure 3.1: 'How often do you wear a mask?'") +
- # theme(panel.background = element_rect(fill = "lightblue",
- #                               colour = "lightblue",
+ # theme(panel.background = element_rect(fill = "lightblue1",
+ #                               colour = "lightblue1",
  #                               size = 0.5, linetype = "solid"))
 ```
 
@@ -242,12 +263,12 @@ For this purposes of this question, respondents were polled on how often they we
 #Social bubble adherence
 my_data %>% 
   ggplot(aes(x = Social_Bubble)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 3.2: 'Do you adhere to a social bubble/circle?'") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
 
@@ -258,12 +279,12 @@ For the purposes of this question, a social bubble/circle is defined as a group 
 #Private establishment rule adherence
 my_data %>% 
   ggplot(aes(x = Follow_Regulation)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 3.3: 'Do you follow all health measures at private establishments?'") +
-  theme(axis.text.x=element_text(angle=90), panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(axis.text.x=element_text(angle=90), panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
 
@@ -271,12 +292,12 @@ my_data %>%
 #Social bubble adherence
 my_data %>% 
   ggplot(aes(x = Visit_non_essentials)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 3.4: Frequency of Participation in Non-Essential Activities") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 
 ```
@@ -286,12 +307,12 @@ my_data %>%
 
 my_data %>% 
   ggplot(aes(x = Travel_Within_Canada)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 3.5: 'Have you travelled within Canada within the past 6 months?'") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
 
@@ -300,14 +321,42 @@ my_data %>%
 
 my_data %>% 
   ggplot(aes(x = Travel_Out_Of_Canada)) +
-  geom_bar(colour ="black", fill="steelblue") +
+  geom_bar(colour ="black", fill="seagreen") +
   labs(x = "Response",
        y = "Frequency",
        title = "Figure 3.6: 'Have you travelled outside of Canada in the past 6 months?'") +
-  theme(panel.background = element_rect(fill = "lightblue",
-                                colour = "lightblue",
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
                                 size = 0.5, linetype = "solid"))
 ```
+
+```{r Vaccine_Confidence, echo=FALSE}
+#Vaccine Confidence
+
+my_data %>% 
+  ggplot(aes(x = Vaccine_Confidence)) +
+  geom_bar(colour ="black", fill="seagreen") +
+  labs(x = "Response",
+       y = "Frequency",
+       title = "Figure 3.7: 'Do you have confidence in the vaccine?'") +
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
+                                size = 0.5, linetype = "solid"))
+```
+```{r Vaccine_Taken, echo=FALSE}
+#How many people would take the vaccine
+
+my_data %>% 
+  ggplot(aes(x = Vaccine_Taken)) +
+  geom_bar(colour ="black", fill="seagreen") +
+  labs(x = "Response",
+       y = "Frequency",
+       title = "Figure 3.8: 'Would you take the vaccine?'") +
+  theme(panel.background = element_rect(fill = "lightblue1",
+                                colour = "lightblue1",
+                                size = 0.5, linetype = "solid"))
+```
+
 
 ## Part V. Discussion
 
