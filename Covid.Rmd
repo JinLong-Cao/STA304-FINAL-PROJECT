@@ -21,17 +21,19 @@ library(tidyverse)
 ```
 
 ## Part I. Introduction
-	As a COVID-19 vaccine starts to distribute and hopefully the pandemic comes to an end, many citizens still remain uncertain or misinformed about the measures necessary to keep this public health crisis contained. In order for things to get things back to normal and minimize the risk of a pandemic occurring again, I would like to survey the ontario public's knowledge about COVID-19 and their feelings on the current vaccine. I would like to figure out whether the Ontario population welcomes the vaccine or worries about it. Granted there are a portion of the Ontario population which identify as "anti-vaccine" activist and would like to see this pandemic end naturally. 
 
-	To help end this pandemic, I conducted a large-scale phone survey (using simulated data) to poll Ontarians regarding the COVID-19 pandemic. However, since our survey included questions relying on respondents to report their personal habits and knowledge regarding COVID-19, I believe these responses could be embellished to view the respondent in a more favourable light. The survey was designed to extract information regarding the adherence of Ontario residents to current COVID-19 containment policies. I found that non-compliance with public health guidelines remains a significant obstacle to combating the pandemic. Our key findings suggest that misinformation, specifically that relating to social media use, are significant contributing factors towards these less than optimal compliance rates.
+As a COVID-19 vaccine starts to distribute and hopefully the pandemic comes to an end, many citizens still remain uncertain or misinformed about the measures necessary to keep this public health crisis contained. In order for things to get things back to normal and minimize the risk of a pandemic occurring again, I would like to survey the ontario public's knowledge about COVID-19 and their feelings on the current vaccine. I would like to figure out whether the Ontario population welcomes the vaccine or worries about it. Granted there are a portion of the Ontario population which identify as "anti-vaccine" activist and would like to see this pandemic end naturally. 
 
-	I found with our simulated data that there still exists a significant degree of non-compliance that is not ideal for containing the pandemic. In particular, I have evidence that media misinformation and social media may be a key factor in these elevated non-compliance rates. In summary, I found that government strategy should be to increase public information and trust by targeting social media with information campaigns. Future studies should use a similar sampling population and study their social media habits.
+To help end this pandemic, I conducted a large-scale phone survey (using simulated data) to poll Ontarians regarding the COVID-19 pandemic. However, since our survey included questions relying on respondents to report their personal habits and knowledge regarding COVID-19, I believe these responses could be embellished to view the respondent in a more favourable light. The survey was designed to extract information regarding the adherence of Ontario residents to current COVID-19 containment policies. I found that non-compliance with public health guidelines remains a significant obstacle to combating the pandemic. Our key findings suggest that misinformation, specifically that relating to social media use, are significant contributing factors towards these less than optimal compliance rates.
+
+I found with our simulated data that there still exists a significant degree of non-compliance that is not ideal for containing the pandemic. In particular, I have evidence that media misinformation and social media may be a key factor in these elevated non-compliance rates. In summary, I found that government strategy should be to increase public information and trust by targeting social media with information campaigns. Future studies should use a similar sampling population and study their social media habits.
 
 
 ## Part II. Data
 
 # Survey methodology 
-	I would like to survey the whole population of Ontario via telephone. This is done by using the area code. The area codes are 365, 548, 705, 226, 289, 613, 807, 437, 249, 343, 416, 519, 647, 905. I sampled all publicly available residential phone numbers starting with those area codes and ending in the digit '3'. This is a form of simple systematic sampling that provides a structured way to gather a large number of samples from the population frame while being representative of the true population.
+
+I would like to survey the whole population of Ontario via telephone. This is done by using the area code. The area codes are 365, 548, 705, 226, 289, 613, 807, 437, 249, 343, 416, 519, 647, 905. I sampled all publicly available residential phone numbers starting with those area codes and ending in the digit '3'. This is a form of simple systematic sampling that provides a structured way to gather a large number of samples from the population frame while being representative of the true population.
   
 A typical issue with simple systematic sampling is the existence of periodic patterns in the sample which may cause our sample to be unrepresentative of the true population. This is resolved through our survey methodology as each residential phone number is assumed to be independent of any others and therefore sampled points should be evenly distributed throughout the population (Changbao and Thomspon, 2020).
   
@@ -426,8 +428,6 @@ The screenshots of the survey given to respondents can be found below.
 - Government of Canada, 2020. "People who are at high risk for severe illness from COVID-19." Retrieved from: https://www.canada.ca/en/public-health/services/publications/diseases-conditions/people-high-risk-for-severe-illness-covid-19.html
 
 - H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
-  
-- Lee, Mie-Yun (2002). "Conducting Surveys and Focus Groups." Entrepreneur. Retried from: www.entrepreneur.com/article/55680. 
 
 - Lemon, J. (2006) Plotrix: a package in the red light district of R. R-News, 6(4):
   8-12.
