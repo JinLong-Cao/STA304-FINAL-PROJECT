@@ -5,7 +5,7 @@ date: '2020-12-22'
 abstract: |
   | The COVID-19 pandemic is one of the most significant challenges that Ontarians are facing. In this report, I conducted a mock survey using simulated respondents to give a cursory look into the broader trends in public health awareness regarding COVID-19. This survey is for the Ontario public in regards to the current COVID-19 pandemic to better understand whether people are confident in the current vaccine coming. I find out that majority of the ontario public is open to the vaccine due to almost a year of social distancing and lockdowns.
   |
-  | **Keywords:** COVID-19, ONTARIO, SIMULATED DATA, SIMPLE SYSTEMTAIC SAMPLING, SURVEY, VACCINE
+  | **Keywords:** COVID-19, ONTARIO, SIMULATED DATA, SIMPLE SYSTEMATIC SAMPLING, SURVEY, VACCINE
 output: pdf_document
 tags:
 - R Markdown
